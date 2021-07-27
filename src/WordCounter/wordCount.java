@@ -174,12 +174,13 @@ public class wordCount extends javax.swing.JFrame {
     private void countBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_countBtnActionPerformed
         // counting the words
         String paragraph = wordEnterArea.getText();
-        int i = 0, words = 1;
-        
-        for (i = 0; i < paragraph.length(); i++) {
-            
+
+        if (paragraph == null || paragraph.isEmpty()) {
+            countShowField.setText(" " + 0);
         }
-        
+
+        String[] words = paragraph.split("\\s+");
+        countShowField.setText(" " + words.length);
     }//GEN-LAST:event_countBtnActionPerformed
 
     /**
